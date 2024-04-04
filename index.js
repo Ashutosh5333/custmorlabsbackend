@@ -17,8 +17,6 @@ const SchemRouter = require("./routes/Schema.route");
 
 app.use(SchemRouter)
 
-
-
  app.listen(8000,async ()=>{
     try{
       await  connectdatabase;
@@ -29,16 +27,3 @@ app.use(SchemRouter)
     console.log("listinig on port 8000")
 })
 
-// process.on("uncaughtException", (err) => {
-//     console.log(`Error: ${err.message}`);
-//     console.log(`Shutting down the server due to uncaught exception`);
-//     process.exit(1);
-//   });
-
-// process.on("unhandledRejection", (err) => {
-//     console.log(`Error: ${err.message}`);
-//     console.log(`Shutting down the server due to Unhabled promise rejection`);
-//     server.close(() => {
-//       process.exit(1);
-//     });
-//   });

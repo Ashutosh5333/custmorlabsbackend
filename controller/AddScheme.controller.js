@@ -45,4 +45,25 @@ const UserModel = require("../models/user.model");
     }
 };
 
-module.exports={AddSchema,getschema}
+
+
+const getallSchema =  async (req, res) => {
+    try {
+        const user = await UserModel.find()
+       
+            res.status(200).json({
+                status: "success",
+                data: user
+            });
+       
+    } catch (err) {
+        console.log("err", err);
+        res.status(500).json({
+            status: "error",
+            message: "Failed to fetch user",
+            error: err.message
+        });
+    }
+};
+
+module.exports={AddSchema,getschema ,getallSchema}
