@@ -50,7 +50,6 @@ const UserModel = require("../models/user.model");
 const getallSchema =  async (req, res) => {
     try {
         const user = await UserModel.find()
-       
             res.status(200).json({
                 status: "success",
                 data: user
